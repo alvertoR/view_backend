@@ -11,6 +11,9 @@ Keep me updated 🤦.
 ### Added
 
 - models for followers and endpoint por create a user
+- endpoints for update and get profile
+- endpoint for login an user
+- login user and create utils for hash password and jwt flow
 
 ## 2022-02-13
 
