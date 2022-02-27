@@ -21,6 +21,10 @@ const AuthSchema = {
         type: DataTypes.BOOLEAN,
         defaultValue: false
     },
+    token: {
+        allowNull: true,
+        type: DataTypes.TEXT
+    },
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE,

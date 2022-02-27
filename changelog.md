@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 Keep me updated 🤦.
 
+## 2022-02-26
+
+### Added
+
+- models for followers and endpoint por create a user
+
 ## 2022-02-13
 
 ### Added

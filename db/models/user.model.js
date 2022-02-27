@@ -43,7 +43,13 @@ class User extends Model {
         this.hasMany(models.Post, {
             as: 'posts',
             foreignKey: 'userId'
-        })
+        });
+        this.belongsToMany(models.Follower, {
+            as:'followers',
+            through: models.Follower,
+            foreignKey:'user_from',
+            otherKey:'user_to'
+        });
     }
 
     static config(sequelize) {
