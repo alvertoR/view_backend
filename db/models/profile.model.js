@@ -13,7 +13,6 @@ const ProfileSchema = {
     description: {
         allowNull: true,
         type: DataTypes.TEXT,
-        unique: true
     },
     createdAt: {
       allowNull: false,

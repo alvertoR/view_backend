@@ -11,7 +11,7 @@ const profileService = new ProfileService();
 class UserController {
     constructor () {};
 
-    async registerUer(req, res){
+    async registerUser(req, res){
         try{
             const { email, nick, password } = req.body;
             const user = {
@@ -21,8 +21,7 @@ class UserController {
                 password: await hashPassword(password),
                 createdAt: getCurrentDateUTC()
             }
-            const newUser = await service.createUser(user);
-            await profileService.createProfile(newUser.dataValues.id)
+            await service.createUser(user);
             response.success(req, res, [], 201);
         }catch(error){
             response.error(req, res, error.message, 500);
