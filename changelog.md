@@ -14,6 +14,7 @@ Keep me updated 🤦.
 - middleware for authentication and multer
 - endpoints for create, get and update post in post module
 - services for upload file in firebase storage
+- column url image in user model
 
 ## 2022-02-28
 

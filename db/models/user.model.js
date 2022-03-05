@@ -22,6 +22,11 @@ const UserSchema = {
       allowNull: false,
       type: DataTypes.STRING,
     },
+    urlImage: {
+      allowNull: false,
+      type: DataTypes.TEXT,
+      field: 'url_image',
+    },
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE,
