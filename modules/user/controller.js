@@ -1,12 +1,10 @@
 const UserService = require('./serivices');
-const ProfileService = require('../profile/serivices');
 const response = require('../../utils/responses');
 const { v4: uuidv4 } = require('uuid');
 const { hashPassword } = require('../../utils/password.helper');
 const { getCurrentDateUTC } = require('../../utils/date.helper');
 
 const service = new UserService();
-const profileService = new ProfileService();
 
 class UserController {
     constructor () {};
@@ -22,6 +20,16 @@ class UserController {
                 createdAt: getCurrentDateUTC()
             }
             await service.createUser(user);
+            response.success(req, res, [], 201);
+        }catch(error){
+            response.error(req, res, error.message, 500);
+        }
+    }
+    
+    async changePictureProfile(req ,res){
+        try{
+            const { id } = req.params;
+            await service.updatePhoto(id,req.file);
             response.success(req, res, [], 201);
         }catch(error){
             response.error(req, res, error.message, 500);

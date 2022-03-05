@@ -5,6 +5,8 @@ const { sign } = require('../../utils/jtw.helper');
 const { getCurrentDateUTC } = require('../../utils/date.helper');
 const { v4: uuidv4 } = require('uuid');
 const ProfileService = require('../profile/serivices');
+const { uploadFile } = require('../../services/firestorage/firestorage.service');
+
 
 const profileService = new ProfileService();
 
@@ -12,7 +14,10 @@ class UserService{
     constructor() {}
 
     async createUser(data) {
-        const newUser = await models.User.create(data);
+        const newUser = await models.User.create({
+            ...data,
+            urlImage: ''
+        });
         await models.Auth.create({
             id: uuidv4(),
             userId: newUser.dataValues.id,
@@ -88,6 +93,16 @@ class UserService{
         const token = sign(payload, config.jwtLogin);
 
         return token
+    }
+
+    async updatePhoto(id, file) {
+        const urlStorage = await uploadFile(file);
+        const user = await this.findUserById(id);
+        const response = await user.update({
+            urlImage: urlStorage
+        });
+
+        return response;
     }
 }
 

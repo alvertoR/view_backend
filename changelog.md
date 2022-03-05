@@ -15,6 +15,7 @@ Keep me updated 🤦.
 - endpoints for create, get and update post in post module
 - services for upload file in firebase storage
 - column url image in user model
+- method for update profile picture in user module
 
 ## 2022-02-28
 

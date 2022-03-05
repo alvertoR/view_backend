@@ -23,7 +23,7 @@ const UserSchema = {
       type: DataTypes.STRING,
     },
     urlImage: {
-      allowNull: false,
+      allowNull: true,
       type: DataTypes.TEXT,
       field: 'url_image',
     },
