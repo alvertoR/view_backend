@@ -44,9 +44,7 @@ const PostSchema = {
 
 class Post extends Model {
     static associate(models) {
-        this.belongsTo(models.User, {
-            as: 'post'
-        })
+        this.belongsTo(models.User, { as: 'user' })
     }
 
     static config(sequelize) {

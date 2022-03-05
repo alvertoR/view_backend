@@ -65,10 +65,8 @@ class AuthService{
     async changePassword(token, newPassword) {
         try {
             const payload = verify(token, config.jwtPassword);
-            console.log(payload);
 
             const auth = await models.Auth.findByPk(payload.id);
-            console.log(auth);
             
             if(auth.dataValues.token !== token){
                 throw new Error('unauthorized');

@@ -41,7 +41,7 @@ class User extends Model {
             foreignKey: 'userId'
         });
         this.hasMany(models.Post, {
-            as: 'posts',
+            as: 'post',
             foreignKey: 'userId'
         });
         this.belongsToMany(models.Follower, {

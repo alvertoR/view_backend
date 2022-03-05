@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 Keep me updated 🤦.
 
+## 2022-03-04
+
+### Added 
+
+- enviroment variables for firebase
+- middleware for authentication and multer
+- endpoints for create, get and update post in post module
+- services for upload file in firebase storage
+
 ## 2022-02-28
 
 ### Added

@@ -27,7 +27,8 @@ class UserService{
         const findUser = await models.User.findOne({
             where: {
                 email
-            }
+            },
+            include:['auth']
         });
 
         if(!findUser) {
@@ -52,7 +53,7 @@ class UserService{
         
         return {
             user: findUser,
-            token: this.signToken(findUser)
+            token: this.signToken(findUser.dataValues.auth.id)
         }
     }
     
@@ -79,9 +80,9 @@ class UserService{
         return user;
     }
 
-    signToken(user) {
+    signToken(authId) {
         const payload = {
-            sub: user.id
+            sub: authId
         }
 
         const token = sign(payload, config.jwtLogin);
