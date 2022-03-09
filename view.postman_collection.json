@@ -1,0 +1,497 @@
+{
+	"info": {
+		"_postman_id": "a48889a8-37e4-462a-b921-e3533f6c9684",
+		"name": "view",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "albertoayalarodriguez97@gmail.com6",
+									"type": "text"
+								},
+								{
+									"key": "nick",
+									"value": "alvertor6",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update picture profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjMzM2ODIxYy00ZjlmLTRmMTEtODIzYi0yMDg3MTdhNDM4N2QiLCJpYXQiOjE2NDY0NTMxNjB9.NgdwMDjqMIpmAT3jTsjcsc-BniVqo6AIc9KVjUQAaYs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/GAMER/Desktop/Angular/FM8TAd6XwAQJn2g.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/change-phote/4454b3cc-9838-4f18-8116-7111c9b3f03a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"change-phote",
+								"4454b3cc-9838-4f18-8116-7111c9b3f03a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "update profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer gyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YmQ4OTRkZS1iODliLTQ5NGQtODE2Mi0yZDNmZTU1MmI3ZjAiLCJpYXQiOjE2NDYyNzc3NjR9.i_iY1jy1FPGlRJQ0InWqZMh7f9vdVGWLAEthhBY3pN0",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "nueva post",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/profile/7325b3df-2f70-4641-89b5-633119ca2f08",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"profile",
+								"7325b3df-2f70-4641-89b5-633119ca2f08"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/profile/:id_user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"profile",
+								":id_user"
+							],
+							"variable": [
+								{
+									"key": "id_user",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "albertoayalarodriguez97@gmail.com6",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "recovery password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "albertoayalarodriguez97@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFlMDk0NTExLTdlOTAtNGYzYy04ZmI1LTQwNjdlN2FkZDBkMCIsImlhdCI6MTY0NjEwNDcxMCwiZXhwIjoxNjQ2MTA1NjEwfQ.x8rPYc0nmGnDxDPowNwteNNaYckbUeGyoSPVva8tH3E",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Follow",
+			"item": [
+				{
+					"name": "Follow user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_from",
+									"value": "7325b3df-2f70-4641-89b5-633119ca2f08",
+									"type": "text"
+								},
+								{
+									"key": "user_to",
+									"value": "54931de4-7e1b-4013-aea4-32fbb3dd28bc",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/follower/follow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"follower",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_from",
+									"value": "54931de4-7e1b-4013-aea4-32fbb3dd28bc",
+									"type": "text"
+								},
+								{
+									"key": "user_to",
+									"value": "7325b3df-2f70-4641-89b5-633119ca2f08",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/follower/un-follow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"follower",
+								"un-follow"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "description",
+									"value": "is too easy buddy",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "6bd894de-b89b-494d-8162-2d3fe552b7f0",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/GAMER/Desktop/Angular/FM8TAd6XwAQJn2g.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/posts/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get posts by user id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/posts/all/70be9a3d-43f2-4b36-bb5d-cfe5e6c4ebe3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"all",
+								"70be9a3d-43f2-4b36-bb5d-cfe5e6c4ebe3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get post by post id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/posts/one/79c2c9ff-cdaa-4d49-8d9a-fd1621a7cd2c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"one",
+								"79c2c9ff-cdaa-4d49-8d9a-fd1621a7cd2c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/posts/like/79c2c9ff-cdaa-4d49-8d9a-fd1621a7cd2c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"like",
+								"79c2c9ff-cdaa-4d49-8d9a-fd1621a7cd2c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
