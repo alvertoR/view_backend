@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 Keep me updated 🤦.
 
+## 2022-03-18
+
+### Added
+
+- url links for vue and angular projects
+
+### Changed
+
+- subject in sendToken method in services layer at auth module
+
 ## 2022-03-04
 
 ### Added 

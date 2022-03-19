@@ -44,8 +44,8 @@ class AuthService{
             id: auth.dataValues.id
         }
         const token = sign(payload, config.jwtPassword, { expiresIn: '15min' });
-        const link = `http://myfrontend.com/recovery?token=${token}`;
-
+        const linkVue = `http://localhost:8080/change-password?token=${token}`;
+        const linkAngular = `http://localhost:4200/update-password?token=${token}`;
         await this.update(auth.dataValues.id, {
             token
         });
@@ -53,8 +53,14 @@ class AuthService{
         const mail = {
             from: 'zetoma97@gmail.com', 
             to: `${user.email}`,
-            subject: "Posible solución a lo de sendgrid", 
-            html: `<b>ingresa a este link para recuperar tu contraseña</b> ${link}`, 
+            subject: "Recuperar constraseña", 
+            html: `
+                <p>Vue link</p>
+                <b>ingresa a este link para recuperar tu contraseña</b> ${linkVue}
+                <br>
+                <p>Angular link</p>
+                <b>ingresa a este link para recuperar tu contraseña</b> ${linkAngular}
+            `, 
         }
 
         const response = await sendMail(mail);
