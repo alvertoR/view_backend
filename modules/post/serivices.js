@@ -20,7 +20,9 @@ class PostService {
     }
 
     async findAll() {
-        const posts = await models.Post.findAll();
+        const posts = await models.Post.findAll({
+            include:['user']
+        });
         return posts;
     }
 
