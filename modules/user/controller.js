@@ -35,6 +35,17 @@ class UserController {
             response.error(req, res, error.message, 500);
         }
     }
+
+    async findUsersByNick(req, res) {
+        try{
+            const { nick } = req.body;
+            
+            const users = await service.findUserByNick(nick);
+            response.success(req, res, users, 200);
+        }catch(error){
+            response.error(req, res, error.message, 500);
+        }
+    }
 }
 
 module.exports = UserController;

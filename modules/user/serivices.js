@@ -66,6 +66,16 @@ class UserService{
         const user = await models.User.findByPk(id);
         return user;
     }
+    
+    async findUserByNick(nickUser) {
+        const user =  await models.User.findAll({
+            where: {
+                nick: nickUser
+            }
+        });
+
+        return user;
+    }
 
     async updateUser(id, changes) {
         const user = await this.findUserById(id);
