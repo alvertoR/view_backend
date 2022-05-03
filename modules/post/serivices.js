@@ -49,6 +49,11 @@ class PostService {
 
         return update;
     }
+
+    async delete(postId) {
+        const post = await this.findPostByPostId(postId);
+        await post.destroy();
+    }
 }
 
 module.exports = PostService;

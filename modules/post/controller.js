@@ -54,6 +54,16 @@ class PostController {
             response.error(req, res, error.message, 500);
         }
     }
+
+    async deletePost(req, res) {
+        try{
+            const { post_id } = req.params;
+            await service.delete(post_id);
+            response.success(req, res, [], 201);
+        }catch(error){
+            response.error(req, res, error.message, 500);
+        }
+    }
 }
 
 module.exports = PostController;
